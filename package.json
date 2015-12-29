@@ -4,6 +4,7 @@
   "description": "",
   "main": "webpack-config.js",
   "dependencies": {
+    "datejs": "0.0.2",
     "virtual-dom": "^2.1.1"
   },
   "devDependencies": {

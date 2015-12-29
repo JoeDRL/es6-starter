@@ -9,7 +9,7 @@ let App = {
         state: {},
         dispatch: (action) => {
             //TODO: Update the state and then the UI
-            console.groupCollapsed("%c" + action.type, "font-weight: bold; color: green;")
+            console.groupCollapsed("%c" + action.type + "%c @ " + new Date().toString('T'), "font-weight: bold; color: green;", "font-weigth: normal; color: grey;")
             console.log("Action: ", action)
 
             //Generate the new state

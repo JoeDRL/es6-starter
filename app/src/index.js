@@ -1,4 +1,5 @@
 import h from 'virtual-dom/h'
+import date from 'datejs'
 import init from './arch'
 
 let Application = {
