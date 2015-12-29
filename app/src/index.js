@@ -1,18 +1,17 @@
 import h from 'virtual-dom/h'
 import date from 'datejs'
 import init from './arch'
+import Freezer from 'freezer-js'
 
 let Application = {
     init: () => {
-        return {
+        return new Freezer({
             count: 0
-        }
+        })
     },
 
     update(state, action){
-        return {
-            count: state.count + 1
-        }
+        return state.set('count', state.count + 1)
     },
 
     view: ({state, dispatch}) => {

@@ -6,6 +6,7 @@ let App = {
     View: null,
     Reducer: null,
     Store: {
+        freezer: null,
         state: {},
         dispatch: (action) => {
             //TODO: Update the state and then the UI
@@ -33,7 +34,8 @@ export default function init(MainModule, cssSelector){
     let {view, update, init} = MainModule
     App.View = view
     App.Reducer = update
-    App.Store.state = init() // Initial state
+    App.Store.freezer = init()
+    App.Store.state = App.Store.freezer.get() // Initial state
 
     App.vTree = view({state: App.Store.state, dispatch: App.Store.dispatch})
     App.Node = createElement(App.vTree)

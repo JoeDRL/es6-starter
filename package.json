@@ -5,6 +5,7 @@
   "main": "webpack-config.js",
   "dependencies": {
     "datejs": "0.0.2",
+    "freezer-js": "^0.9.4",
     "virtual-dom": "^2.1.1"
   },
   "devDependencies": {
