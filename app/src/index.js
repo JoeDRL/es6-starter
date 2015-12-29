@@ -1,9 +1,23 @@
-import App from './app.js'
-import Router from './routes.js'
-require('./ui/animations.js')
+import h from 'virtual-dom/h'
+import init from './arch'
 
-//Styles
-require('../style/base.sass')
+let Application = {
+    init: () => {
+        return {
+            count: 0
+        }
+    },
 
-App.$mount(document.body)
-Router.start()
+    update(state, action){
+        return {
+            count: state.count + 1
+        }
+    },
+
+    view: ({state, dispatch}) => {
+        return h('h1', 'Count: ' + state.count.toString())
+    }
+}
+
+let App = init(Application, 'app')
+window.Store = App.Store
